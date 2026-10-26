@@ -39,7 +39,7 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow-lg items-center justify-center">
+        <main class="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center">
             <h1 class="text-3xl font-bold text-blue-600">
                 Hello Tailwind!
             </h1>
