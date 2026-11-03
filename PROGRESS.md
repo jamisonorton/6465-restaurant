@@ -47,7 +47,7 @@ Files / notes:
 
 ## 3. Home page, login, and shared layout
 
-Owner: **Unclaimed — add your name**
+Owner: **Jamison**
 
 Status: Not started
 
