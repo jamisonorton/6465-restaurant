@@ -4,12 +4,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 function navLinkClasses(string $page, string $currentPage): string
 {
     return $page === $currentPage
-        ? 'border-b-2 border-gray-900 pb-1 font-semibold text-gray-900'
+        ? 'border-b-2 border-gray-900 pb-1 font-bold text-gray-900'
         : 'text-gray-800 hover:text-gray-600';
 }
 ?>
 
-<nav class="flex items-center justify-between bg-gray-100 px-8 py-4">
+<nav class="flex items-center justify-between bg-gray-100 px-8 py-6">
   <a href="index.php" class="text-xl font-bold text-gray-900">
     Craving Index
   </a>
@@ -23,9 +23,9 @@ function navLinkClasses(string $page, string $currentPage): string
       </a>
     </li>
     <li>
-      <a href="restaurants.php"
-         class="<?= navLinkClasses('restaurants.php', $currentPage) ?>"
-         <?= $currentPage === 'restaurants.php' ? 'aria-current="page"' : '' ?>>
+      <a href="restaurants/index.php"
+         class="<?= navLinkClasses('restaurants/index.php', $currentPage) ?>"
+         <?= $currentPage === 'restaurants/index.php' ? 'aria-current="page"' : '' ?>>
         Restaurants
       </a>
     </li>

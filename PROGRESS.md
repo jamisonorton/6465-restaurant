@@ -49,9 +49,9 @@ Files / notes:
 
 Owner: **Jamison**
 
-Status: Not started
+Status: Started
 
-- [ ] Home page saved as PHP.
+- [*] Home page saved as PHP.
 - [ ] Login page saved as PHP.
 - [ ] Shared navigation and consistent HTML/CSS/Bootstrap styling.
 - [ ] Coordinate layout and styling with both CRUD section owners early.
