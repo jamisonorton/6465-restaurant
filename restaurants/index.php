@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurants | Craving Index</title>
-    <link rel="stylesheet" href="restaurants.css">
+    
 </head>
 <body>
     <header class="site-header">
@@ -17,9 +17,15 @@
                 <span class="role-label">Administrator</span>
             </nav>
         </div>
-    </header>
+    </header> -->
+<?php
+require_once '../includes/header.php';
+require_once '../includes/nav.php';
 
-    <main class="page-container">
+?>
+
+<main class="page-container">
+
         <div class="page-heading">
             <div>
                 <h1>Manage Restaurants</h1>
@@ -72,8 +78,9 @@
         </div>
 
         <p class="restaurant-count">1 restaurant</p>
-
-        <footer class="site-footer">Craving Index</footer>
+<!-- 
+        <footer class="site-footer">Craving Index</footer> -->
     </main>
-</body>
-</html>
+<!-- </body>
+</html> -->
+<?php require_once '../includes/footer.php'; ?>
