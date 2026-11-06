@@ -10,15 +10,15 @@ function navLinkClasses(string $page, string $currentPage): string
 ?>
 
 <nav class="flex items-center justify-between bg-gray-100 px-8 py-6">
-  <a href="index.php" class="text-xl font-bold text-gray-900">
+  <a href="/index.php" class="text-xl font-bold text-gray-900">
     Craving Index
   </a>
 
   <ul class="flex items-center gap-7 text-sm">
     <li>
-      <a href="index.php"
-         class="<?= navLinkClasses('index.php', $currentPage) ?>"
-         <?= $currentPage === 'index.php' ? 'aria-current="page"' : '' ?>>
+      <a href="/index.php"
+         class="<?= navLinkClasses('/index.php', $currentPage) ?>"
+         <?= $currentPage === '/index.php' ? 'aria-current="page"' : '' ?>>
         Home
       </a>
     </li>
