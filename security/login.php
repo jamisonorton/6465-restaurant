@@ -21,9 +21,8 @@ require_once __DIR__ . '/../includes/nav.php';
 
       <div>
         <label for="email" class="block text-sm font-medium mb-1">Email</label>
-        <input id="email" name="email" type="email" required autocomplete="email"
-               placeholder="you@example.com"
-               class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600">
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"
+          class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600">
       </div>
 
       <div>
@@ -31,18 +30,16 @@ require_once __DIR__ . '/../includes/nav.php';
           <label for="password" class="block text-sm font-medium">Password</label>
           <a href="#" class="text-sm text-red-600 hover:underline">Forgot password?</a>
         </div>
-        <input id="password" name="password" type="password" required minlength="8"
-               autocomplete="current-password"
-               class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600">
+        <input id="password" name="password" type="password" required minlength="8" autocomplete="current-password"
+          class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600">
       </div>
 
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
         <input id="remember" name="remember" type="checkbox" style="width: auto; flex: none; margin: 0;">
         <label for="remember" class="text-sm" style="display: inline; width: auto; margin: 0;">Remember me</label>
       </div>
 
-      <button type="submit"
-              class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded py-2">
+      <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded py-2">
         Log In
       </button>
     </form>

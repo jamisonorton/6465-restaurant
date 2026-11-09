@@ -3,35 +3,36 @@ require_once 'includes/header.php';
 require_once 'includes/nav.php';
 
 ?>
-        <!-- Main Content -->
-<main >
+<!-- Main Content -->
+<main>
   <?php
-// ===== Craving Index home page content (goes inside the <main> tag of index.php) =====
+  // ===== Craving Index home page content (goes inside the <main> tag of index.php) =====
 // Mid-term: sample data in arrays, no database. Final: replace arrays with DB queries.
+  
+  $categories = ["Burgers", "Pizza", "Mexican", "Sushi", "BBQ", "Vegan", "Breakfast", "Desserts"];
 
-$categories = ["Burgers", "Pizza", "Mexican", "Sushi", "BBQ", "Vegan", "Breakfast", "Desserts"];
+  // Sample featured restaurants (final: restaurants with an active premium subscription)
+  $featured = [
+    ["id" => 1, "name" => "The Copper Grill", "category" => "Burgers", "city" => "Salt Lake City", "score" => 4.7, "followers" => 1240],
+    ["id" => 2, "name" => "Sakura Roll House", "category" => "Sushi", "city" => "Sandy", "score" => 4.5, "followers" => 980],
+    ["id" => 3, "name" => "Casa Verde Cantina", "category" => "Mexican", "city" => "Provo", "score" => 4.6, "followers" => 1105],
+  ];
 
-// Sample featured restaurants (final: restaurants with an active premium subscription)
-$featured = [
-    ["id" => 1, "name" => "The Copper Grill",   "category" => "Burgers", "city" => "Salt Lake City", "score" => 4.7, "followers" => 1240],
-    ["id" => 2, "name" => "Sakura Roll House",  "category" => "Sushi",   "city" => "Sandy",          "score" => 4.5, "followers" => 980],
-    ["id" => 3, "name" => "Casa Verde Cantina", "category" => "Mexican", "city" => "Provo",          "score" => 4.6, "followers" => 1105],
-];
+  // Sample top-rated dishes (final: AVG(rating) from Reviews grouped by Food_Items)
+  $topDishes = [
+    ["dish" => "Signature Truffle Burger", "restaurant" => "The Copper Grill", "rating" => 4.9, "reviews" => 212],
+    ["dish" => "Spicy Tuna Crunch Roll", "restaurant" => "Sakura Roll House", "rating" => 4.8, "reviews" => 167],
+    ["dish" => "Birria Tacos", "restaurant" => "Casa Verde Cantina", "rating" => 4.8, "reviews" => 189],
+    ["dish" => "Brisket Plate", "restaurant" => "Smoke & Oak BBQ", "rating" => 4.7, "reviews" => 143],
+  ];
 
-// Sample top-rated dishes (final: AVG(rating) from Reviews grouped by Food_Items)
-$topDishes = [
-    ["dish" => "Signature Truffle Burger", "restaurant" => "The Copper Grill",   "rating" => 4.9, "reviews" => 212],
-    ["dish" => "Spicy Tuna Crunch Roll",   "restaurant" => "Sakura Roll House",  "rating" => 4.8, "reviews" => 167],
-    ["dish" => "Birria Tacos",             "restaurant" => "Casa Verde Cantina", "rating" => 4.8, "reviews" => 189],
-    ["dish" => "Brisket Plate",            "restaurant" => "Smoke & Oak BBQ",    "rating" => 4.7, "reviews" => 143],
-];
-
-// Helper: turn a 4.7 score into ★★★★☆ text
-function stars($score) {
+  // Helper: turn a 4.7 score into ★★★★☆ text
+  function stars($score)
+  {
     $full = (int) round($score);
     return str_repeat("★", $full) . str_repeat("☆", 5 - $full);
-}
-?>
+  }
+  ?>
 
   <!-- HERO + SEARCH -->
   <section class="bg-gray-900 text-white py-20 px-4 text-center">
@@ -44,10 +45,10 @@ function stars($score) {
     <form action="#" method="get" class="max-w-3xl mx-auto flex flex-col md:flex-row gap-3">
       <label for="q" class="sr-only">Search dishes or restaurants</label>
       <input id="q" name="q" type="text" placeholder="Search a dish or restaurant..."
-             class="flex-1 rounded px-4 py-3 text-gray-900" style="flex: 1; min-width: 16rem;">
+        class="flex-1 rounded px-4 py-3 text-gray-900" style="flex: 1; min-width: 16rem;">
       <label for="location" class="sr-only">Location</label>
       <input id="location" name="location" type="text" placeholder="City or ZIP"
-             class="md:w-48 rounded px-4 py-3 text-gray-900">
+        class="md:w-48 rounded px-4 py-3 text-gray-900">
 
       <label for="category" class="sr-only">Category</label>
       <select id="category" name="category" class="md:w-44 rounded px-4 py-3 text-gray-900">
@@ -88,7 +89,8 @@ function stars($score) {
             <div class="p-4">
               <span class="text-xs uppercase tracking-wide text-red-600 font-semibold">Featured</span>
               <h3 class="text-lg font-bold"><?= htmlspecialchars($r["name"]) ?></h3>
-              <p class="text-sm text-gray-600"><?= htmlspecialchars($r["category"]) ?> · <?= htmlspecialchars($r["city"]) ?></p>
+              <p class="text-sm text-gray-600"><?= htmlspecialchars($r["category"]) ?> ·
+                <?= htmlspecialchars($r["city"]) ?></p>
               <p class="mt-2">
                 <span class="text-yellow-500" aria-hidden="true"><?= stars($r["score"]) ?></span>
                 <span class="font-semibold"><?= number_format($r["score"], 1) ?></span>
@@ -146,7 +148,8 @@ function stars($score) {
   <section class="max-w-6xl mx-auto px-4 py-12 text-center">
     <h2 class="text-2xl font-bold mb-3">Ready to share what you're craving?</h2>
     <!-- Login page lives in the security folder -->
-    <a href="security/login.php" class="inline-block bg-red-600 hover:bg-red-700 text-white rounded px-6 py-3 font-semibold">
+    <a href="security/login.php"
+      class="inline-block bg-red-600 hover:bg-red-700 text-white rounded px-6 py-3 font-semibold">
       Log in to write a review
     </a>
   </section>
