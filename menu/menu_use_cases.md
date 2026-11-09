@@ -43,7 +43,7 @@ Related page:
 
 ## UC-M2 View Menu Items, and Aggregate Sentiment
 
-Actor/s: Administrator
+Actor: Administrator
 
 Goal: Browse a restaurant’s menu items, inspect item-level reviews, and review aggregate sentiment scores calculated from food item ratings.
 
